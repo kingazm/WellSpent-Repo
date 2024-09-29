@@ -1,5 +1,4 @@
-This is the web-deployed preview version of the app WellSpent created by <b> Kinga Żmuda </b> and <b>Ekaterina Mashchenko</b> during HackYeah 2024.
-The app is targeted for mobile phones, however, we chose this way of presenting it due to the simplicity and convenience of GitHub Pages - does not require to install anything.
+This is the full repository of the app WellSpent created by <b> Kinga Żmuda </b> and <b>Ekaterina Mashchenko</b> during HackYeah 2024.
 
 Warning: the app is not published yet on any popular app store, so we prepared a simple preview via Github Pages. For that, proceed to: (https://github.com/kingazm/WellSpent-WebDeployment)
 
