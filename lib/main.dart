@@ -724,3 +724,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
 //temp
 }
+
+
+/*
+Dialogue pop-up windows with tutorial from the Flutter Documentation:
+  https://api.flutter.dev/flutter/material/showDialog.html
+ */
