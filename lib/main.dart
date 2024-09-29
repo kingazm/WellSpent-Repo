@@ -6,12 +6,10 @@ void main() {
   runApp(const MyApp());
 }
 
-//WAZNE ZMIENNE
+//Variables to update UI for the user
 int _coins = 1440;
-String name = "Dear User"; //imie usera tbd
-Color balanceColor = Color(0xFF77D85C); //UI info component
-
-//WAZNE
+String name = "Dear User"; //username placeholder
+Color balanceColor = Color(0xFF77D85C); //background color
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -75,10 +73,12 @@ class _SpendingCoinsView extends State<SpendingCoinsView> {
         height: double.infinity,
         width: double.infinity,
         child: Padding(
+          //expand
           padding: const EdgeInsets.only(
               top: 50.0, bottom: 50.0, left: 40.0, right: 40.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            //mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
                 'Hi, $name',
@@ -105,7 +105,8 @@ class _SpendingCoinsView extends State<SpendingCoinsView> {
                   Text('$_coins', style: TextStyle(fontSize: 50.0)),
                 ],
               ),
-              SizedBox(height: MediaQuery.sizeOf(context).height / 10),
+              SizedBox(height: 20.0),
+              //SizedBox(height: MediaQuery.sizeOf(context).height / 10),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -113,7 +114,8 @@ class _SpendingCoinsView extends State<SpendingCoinsView> {
                     onPressed: () {
                       //spend coins
                       //temp
-                      updateUI(-100); //w domysle stressed at work
+
+                      _workDialogBuilder(context);
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.black,
@@ -142,7 +144,7 @@ class _SpendingCoinsView extends State<SpendingCoinsView> {
                   SizedBox(width: 10.0),
                   ElevatedButton(
                     onPressed: () {
-                      updateUI(-100);
+                      _studiesDialogBuilder(context);
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.black,
@@ -177,7 +179,7 @@ class _SpendingCoinsView extends State<SpendingCoinsView> {
                   ElevatedButton(
                     onPressed: () {
                       //spend coins
-                      updateUI(100);
+                      _familyDialogBuilder(context);
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.black,
@@ -206,7 +208,7 @@ class _SpendingCoinsView extends State<SpendingCoinsView> {
                   SizedBox(width: 10.0),
                   ElevatedButton(
                     onPressed: () {
-                      updateUI(100);
+                      _friendsDialogBuilder(context);
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.black,
@@ -235,7 +237,7 @@ class _SpendingCoinsView extends State<SpendingCoinsView> {
                 ],
               ),
               SizedBox(height: 20.0),
-              Row(
+              /*Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   ElevatedButton(
@@ -295,9 +297,10 @@ class _SpendingCoinsView extends State<SpendingCoinsView> {
                     ),
                   ),
                 ],
-              ),
+              ),*/
               //Navigation Bar section start
-              SizedBox(height: MediaQuery.sizeOf(context).height / 3 - 140),
+              //SizedBox(height: MediaQuery.sizeOf(context).height / 3 - 140),
+              SizedBox(height: 30.0),
               Container(
                 child: Center(
                   child: Row(
@@ -329,6 +332,181 @@ class _SpendingCoinsView extends State<SpendingCoinsView> {
           ),
         ),
       ),
+    );
+  }
+
+  //temp
+  Future<void> _workDialogBuilder(BuildContext context) {
+    return showDialog<void>(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Work'),
+          content: const Text(
+            'Was your day at work more a stressful one or a fulfilling, fruitfult time?',
+          ),
+          actions: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextButton(
+                  style: TextButton.styleFrom(
+                    textStyle: Theme.of(context).textTheme.labelLarge,
+                  ),
+                  child: const Icon(Icons.thumb_down,
+                      color: Colors.red, size: 40.0),
+                  onPressed: () {
+                    updateUI(-200);
+                    Navigator.of(context).pop();
+                  },
+                ),
+                SizedBox(width: MediaQuery.sizeOf(context).width / 4),
+                TextButton(
+                  style: TextButton.styleFrom(
+                    textStyle: Theme.of(context).textTheme.labelLarge,
+                  ),
+                  child: const Icon(Icons.thumb_up,
+                      color: Colors.green, size: 40.0),
+                  onPressed: () {
+                    updateUI(-50);
+                    Navigator.of(context).pop();
+                  },
+                ),
+              ],
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  Future<void> _familyDialogBuilder(BuildContext context) {
+    return showDialog<void>(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Family'),
+          content: const Text(
+              'Did you find your time with family today peaceful and relaxing?'),
+          actions: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextButton(
+                  style: TextButton.styleFrom(
+                    textStyle: Theme.of(context).textTheme.labelLarge,
+                  ),
+                  child: const Icon(Icons.thumb_down,
+                      color: Colors.red, size: 40.0),
+                  onPressed: () {
+                    updateUI(-200);
+                    Navigator.of(context).pop();
+                  },
+                ),
+                SizedBox(width: MediaQuery.sizeOf(context).width / 4),
+                TextButton(
+                  style: TextButton.styleFrom(
+                    textStyle: Theme.of(context).textTheme.labelLarge,
+                  ),
+                  child: const Icon(Icons.thumb_up,
+                      color: Colors.green, size: 40.0),
+                  onPressed: () {
+                    updateUI(-50);
+                    Navigator.of(context).pop();
+                  },
+                ),
+              ],
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  Future<void> _studiesDialogBuilder(BuildContext context) {
+    return showDialog<void>(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Studies'),
+          content: const Text(
+            'Was your day at school more a stressful one or a fulfilling, fruitfult time?',
+          ),
+          actions: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextButton(
+                  style: TextButton.styleFrom(
+                    textStyle: Theme.of(context).textTheme.labelLarge,
+                  ),
+                  child: const Icon(Icons.thumb_down,
+                      color: Colors.red, size: 40.0),
+                  onPressed: () {
+                    updateUI(-200);
+                    Navigator.of(context).pop();
+                  },
+                ),
+                SizedBox(width: MediaQuery.sizeOf(context).width / 4),
+                TextButton(
+                  style: TextButton.styleFrom(
+                    textStyle: Theme.of(context).textTheme.labelLarge,
+                  ),
+                  child: const Icon(Icons.thumb_up,
+                      color: Colors.green, size: 40.0),
+                  onPressed: () {
+                    updateUI(-50);
+                    Navigator.of(context).pop();
+                  },
+                ),
+              ],
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  Future<void> _friendsDialogBuilder(BuildContext context) {
+    return showDialog<void>(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Friends'),
+          content: const Text(
+              'Did your time with friends bring you happiness and new experiences today?'),
+          actions: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextButton(
+                  style: TextButton.styleFrom(
+                    textStyle: Theme.of(context).textTheme.labelLarge,
+                  ),
+                  child: const Icon(Icons.thumb_down,
+                      color: Colors.red, size: 40.0),
+                  onPressed: () {
+                    updateUI(-200);
+                    Navigator.of(context).pop();
+                  },
+                ),
+                SizedBox(width: MediaQuery.sizeOf(context).width / 4),
+                TextButton(
+                  style: TextButton.styleFrom(
+                    textStyle: Theme.of(context).textTheme.labelLarge,
+                  ),
+                  child: const Icon(Icons.thumb_up,
+                      color: Colors.green, size: 40.0),
+                  onPressed: () {
+                    updateUI(-50);
+                    Navigator.of(context).pop();
+                  },
+                ),
+              ],
+            ),
+          ],
+        );
+      },
     );
   }
 }
@@ -390,7 +568,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   Text('$_coins', style: TextStyle(fontSize: 50.0)),
                 ],
               ),
-              SizedBox(height: MediaQuery.sizeOf(context).height / 10),
+              SizedBox(height: 20.0),
+              //SizedBox(height: MediaQuery.sizeOf(context).height / 10),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -455,7 +634,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ],
               ),
-              SizedBox(height: MediaQuery.sizeOf(context).height / 10),
+              SizedBox(height: 30.0),
+
+              //SizedBox(height: MediaQuery.sizeOf(context).height / 10),
               Column(
                 children: [
                   Row(
@@ -465,7 +646,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       Text('$_coins/1440')
                     ],
                   ),
-                  SizedBox(height: 15.0),
+                  SizedBox(height: 30.0),
                   new LinearPercentIndicator(
                     width: MediaQuery.sizeOf(context).width / 1.4,
                     lineHeight: 14.0,
@@ -478,7 +659,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ],
               ),
-              SizedBox(height: 40.0),
+              SizedBox(height: 10.0),
               Column(
                 children: [
                   Row(
@@ -501,7 +682,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
 
               //Navigation Bar section
-              SizedBox(height: MediaQuery.sizeOf(context).height / 3 - 140),
+              SizedBox(height: 30.0),
               Container(
                 child: Center(
                   child: Row(
@@ -522,10 +703,11 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       SizedBox(width: 40.0),
                       TextButton(
-                        child: Icon(Icons.workspace_premium,
-                            size: 50.0, color: Colors.black),
-                        onPressed: () {},
-                      ),
+                          onPressed: () {
+                            //_workDialogBuilder(context);
+                          },
+                          child: Icon(Icons.workspace_premium,
+                              size: 50.0, color: Colors.black)),
                       SizedBox(width: 40.0),
                       Icon(Icons.history, size: 50.0),
                     ],
@@ -539,4 +721,6 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
+
+//temp
 }

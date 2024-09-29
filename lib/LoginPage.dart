@@ -21,6 +21,8 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Text('Please log in', style: TextStyle(fontSize: 30.0)),
+              SizedBox(height: 10.0),
               SizedBox(
                 width: MediaQuery.sizeOf(context).width - 80,
                 child: TextField(
