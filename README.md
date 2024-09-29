@@ -17,6 +17,10 @@ Those gamified mechanics in a fun way encourage shifting users' attention toward
 
 <i><b>Make sure your energy is WellSpent. </i></b>
 
+<img src="https://media.discordapp.net/attachments/1289475425340231743/1289863148144300112/IMG_9385.png?ex=66fa5e2b&is=66f90cab&hm=ff1585eae25abce0c274cea48c3bd5a45ccfd14fb38f87016990eabe4dba36cf&=&format=webp&quality=lossless&width=262&height=567" width="150" />
+
+<img src="https://media.discordapp.net/attachments/1289475425340231743/1289863147523407883/IMG_9384.png?ex=66fa5e2a&is=66f90caa&hm=aa8d241828c1d918d8e043287aa56d3d07da05a1138f466c62d365a4fa67b411&=&format=webp&quality=lossless&width=262&height=567" width="150" />
+
 # Future development
 We propose expanding the HealthCoins' meaning, as we hope to partner up with companies interested in wellness and sport to offer discounts and special offers to reward our users' hard work towards their well-being, as well as aid them in crisis. Those sponsored options would include coupons for massages, yoga classes, mindfulness coaching and more. This makes the ads targeted and more effective both for potential sponsors and users. 
 
