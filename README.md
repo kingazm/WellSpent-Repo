@@ -2,7 +2,7 @@ This is the full repository of the app WellSpent created by <b> Kinga Żmuda </b
 
 Warning: the app is not published yet on any popular app store, so we prepared a simple preview via Github Pages. For that, proceed to: (https://github.com/kingazm/WellSpent-WebDeployment):
 
-1. Open (https://github.com/kingazm/WellSpent-WebDeploymet/index.html) in Google Chrome;
+1. Open (https://github.com/kingazm/WellSpent-WebDeployment/index.html) in Google Chrome;
 2. Open Developer Tools and choose a phone device, we recommend i.e. iPhone XR;
 3. Have fun discovering the idea and functionalities of the app!
 
