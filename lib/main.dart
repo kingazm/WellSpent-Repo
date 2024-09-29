@@ -368,7 +368,7 @@ class _SpendingCoinsView extends State<SpendingCoinsView> {
                   child: const Icon(Icons.thumb_up,
                       color: Colors.green, size: 40.0),
                   onPressed: () {
-                    updateUI(-50);
+                    updateUI(100);
                     Navigator.of(context).pop();
                   },
                 ),
@@ -411,7 +411,7 @@ class _SpendingCoinsView extends State<SpendingCoinsView> {
                   child: const Icon(Icons.thumb_up,
                       color: Colors.green, size: 40.0),
                   onPressed: () {
-                    updateUI(-50);
+                    updateUI(100);
                     Navigator.of(context).pop();
                   },
                 ),
@@ -455,7 +455,7 @@ class _SpendingCoinsView extends State<SpendingCoinsView> {
                   child: const Icon(Icons.thumb_up,
                       color: Colors.green, size: 40.0),
                   onPressed: () {
-                    updateUI(-50);
+                    updateUI(100);
                     Navigator.of(context).pop();
                   },
                 ),
@@ -498,7 +498,7 @@ class _SpendingCoinsView extends State<SpendingCoinsView> {
                   child: const Icon(Icons.thumb_up,
                       color: Colors.green, size: 40.0),
                   onPressed: () {
-                    updateUI(-50);
+                    updateUI(100);
                     Navigator.of(context).pop();
                   },
                 ),
@@ -556,10 +556,10 @@ class _MyHomePageState extends State<MyHomePage> {
               Row(
                 children: [
                   Container(
-                    child: CircleAvatar(
-                      radius: 25.0,
-                      //backgroundImage:
-                      //AssetImage('assets/images/background.jpg'),
+                    child: Image.network(
+                      "https://media.discordapp.net/attachments/1289475425340231743/1289847195746435216/HealthCoin.png?ex=66fa4f4f&is=66f8fdcf&hm=ec6df6cf0cd217ef172afa8e76078a31e73f287d1cc6f0b757bb128b0ff8eda6&=&format=webp&quality=lossless&width=525&height=525",
+                      height: 100,
+                      width: 100,
                     ),
                   ),
                   SizedBox(
@@ -729,4 +729,7 @@ class _MyHomePageState extends State<MyHomePage> {
 /*
 Dialogue pop-up windows with tutorial from the Flutter Documentation:
   https://api.flutter.dev/flutter/material/showDialog.html
+
+  HealthCoin.png was created with support of Copilot tool.
+
  */
